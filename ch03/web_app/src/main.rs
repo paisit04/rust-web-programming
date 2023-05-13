@@ -4,6 +4,7 @@ mod views;
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
+        println!("worker");
         let app = App::new().configure(views::views_factory);
         return app;
     })
